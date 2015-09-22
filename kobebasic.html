@@ -1,0 +1,369 @@
+<html>
+<body bgcolor="#DAF7DA">
+<!-- FRONTEND OF THE PAGE -->
+<h3 align="right"> Kobe - Basic Information &thinsp; &ensp; &emsp; &thinsp; &ensp; &emsp; &thinsp; &ensp; &emsp; &thinsp; &ensp; &emsp;
+<input type="button" value="Refresh" style="color:black;font-weight: bold" onclick="location.reload(true);" /> </h3>
+<table bgcolor="#C1F2C1" align="center" border=1 cellspacing="1" cellpadding="5" style="border-collapse:collapse;font-family:verdana;font-size:12px;border:2px solid;" >
+<tr><th style="width:30%">Type Of Call </th><td>
+<input type="radio" name="TypeofCall" id="NewReservation" onclick="myFunction()" checked>New Reservation &thinsp; 
+<input type="radio" name="TypeofCall" id="ChangeReservation" onclick="myFunction()">Change Reservation &ensp;
+<input type="radio" name="TypeofCall" id="CancelReservation" onclick="myFunction()">Cancel Reservation</td></tr>
+
+<tr id="ChangeDateRow" style="Display:none;"><th>Change Date : </th>
+<td>From : <input type="date" id="FromDate" onchange="myFunction()"> 
+To : <input type="date" id="ToDate" onchange="myFunction()"></td></tr>
+
+<tr id="ChangeTimeRow" style="Display:none;"><th>Change Time : </th>
+<td>From : <input type="time" id="FromTime" onchange="myFunction()" > 
+To : <input type="time" id="ToTime" onchange="myFunction()" ></td></tr>
+
+<tr id="ChangeSeatsRow" style="Display:none;"><th>Change No. of Seats : </th>
+<td>From : <select id="FromSeats" onchange="myFunction()">
+				<option selected="selected" value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="20+">20+</option>
+			</select> &nbsp; 
+To : <select id="ToSeats" onchange="myFunction()">
+				<option selected="selected" value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="20+">20+</option>
+			</select> &nbsp;</td></tr>
+
+<tr id="ChangeLocationRow" style="Display:none;"><th>Change Location : </th>
+<td>From : <select id="FromPlace" onchange="myFunction()">
+<option value="Select">Select</option>
+<option value="Alafaya">Alafaya</option>
+<option value="Altamonte Springs">Altamonte Springs</option>
+<option value="Brandon">Brandon</option>
+<option value="Clearwater">Clearwater</option>
+<option value="I-Drive / Convention">I-Drive / Convention</option>
+<option value="Kirkman/Universal">Kirkman/Universal</option>
+<option value="Kissimmee">Kissimmee</option>
+<option value="Lake Buena Vista">Lake Buena Vista</option>
+<option value="Longwood">Longwood</option>
+<option value="New Tampa">New Tampa</option>
+<option value="TAMPA">Tampa</option> </select>
+
+To : <select id="ToPlace" onchange="myFunction()" >
+<option value="Select">Select</option>
+<option value="Alafaya">Alafaya</option>
+<option value="Altamonte Springs">Altamonte Springs</option>
+<option value="Brandon">Brandon</option>
+<option value="Clearwater">Clearwater</option>
+<option value="I-Drive / Convention">I-Drive / Convention</option>
+<option value="Kirkman/Universal">Kirkman/Universal</option>
+<option value="Kissimmee">Kissimmee</option>
+<option value="Lake Buena Vista">Lake Buena Vista</option>
+<option value="Longwood">Longwood</option>
+<option value="New Tampa">New Tampa</option>
+<option value="TAMPA">Tampa</option> </select> </td></tr>
+
+<tr id="TypeofCustomerRow" style="Display:show;"><th> Type of Customer </th><td>
+<input type="radio" name="KobeMember" id="KobeMemberYes" onclick="myFunction()">Kobe Member &nbsp &nbsp &nbsp
+<input type="radio" name="KobeMember" id="KobeMemberNo" onclick="myFunction()">Non Kobe Member</td></tr>
+
+<tr id="CelebrationRow" style="Display:show;"><th> Type of Celebration </th>
+<td><select id="TypeOfCelebration" onclick="myFunction()">
+<option value="No Celebration">No Celebration</option>
+<option value="Birthday Celebration">Birthday</option>
+<option value="Anniversary Celebration">Anniversary</option>
+<option value="Graduation Celebration">Graduation</option>
+</select></td></tr>
+
+<tr id="CustomerRequestRow" style="Display:show;"><th>Customer Requested for </th><td>
+<table style="font-size:12px"><tr> <td><input type="checkbox" id="QuietRoom" name="QuietRoom" value="Customer requested for a Quiet Room" onclick="myFunction()" />Quiet Room </td>
+			<td><input type="checkbox" id="HappyHour" name="HappyHour" value="Customer requested for Happy-Hour package" onclick="myFunction()" />Happy Hour </td></tr>
+<tr>		<td><input type="checkbox" id="DinnerFor2" name="DinnerFor2" value="Customer requested for Dinner-For-2 package" onclick="myFunction()" />Dinner for 2 </td>
+			<td><input type="checkbox" id="EarlyBird" name="EarlyBird" value="Customer requested for Early-Bird package" onclick="myFunction()" />Early Bird </td></tr>
+<tr>		<td><input type="checkbox" id="LunchMenu" name="LunchMenu" value="Customer requested for the Lunch Menu" onclick="myFunction()" />Lunch Menu </td>
+			<td><input type="checkbox" id="BirthdayDiscountEmail" name="BirthdayDiscountEmail" value="Customer did not receive the Birthday Discount Email" onclick="myFunction()" />No Birthday Discount Email </td></tr>
+<tr>		<td><input type="checkbox" id="OneTable" name="OneTable" value="Customer requested for everyone to be seated at one table" onclick="myFunction()" />Single table request</td></tr> </table>
+</td></tr>
+
+<tr id="AllergiesRow" style="Display:show;"><th>Customer Informed about Allergies :</th>
+<td><textarea rows="3" cols="65" name="Allergies" id="Allergies" onkeyup="myFunction()"></textarea></td></tr>
+</table>
+&nbsp;
+<br />
+
+<table align="center"><tr><th>
+<textarea rows="10" cols="80" name="Output" id="Output" style="border:2px solid;"></textarea></th>
+<td><p align="right"><input type="button" style="color:black;font-weight: bold" value="  Copy  " onclick="ClipBoard();"/></p> </td></tr>
+</div> </table>
+
+
+<!-- FUNCTION FOR DISPLAYING THE INFORMATION SELECTED ON THE PAGE -->
+<script type="text/javascript"> 
+
+Date.prototype.toDateInputValue = (function() {
+    var local = new Date(this);
+    return local.toJSON().slice(0,10);
+});
+
+var today = new Date().toDateInputValue();
+document.getElementById('FromDate').min=today;
+document.getElementById('ToDate').min=today;
+//alert(document.getElementById('FromDate'));
+
+function ClipBoard() 
+{
+//var copyDiv = document.createElement('div');
+//copyDiv.contentEditable = true;
+//document.body.appendChild(copyDiv);
+//copyDiv.innerHTML = document.getElementById("Output").value;
+//copyDiv.unselectable = "off";
+document.getElementById("Output").focus();
+document.execCommand('SelectAll');
+document.execCommand("Copy", false, null);
+//document.body.removeChild(copyDiv);
+document.execCommand('Unselect');
+//Copied = document.getElementById("Output").value.createTextRange();
+//Copied.execCommand("Copy");
+}
+
+function myFunction()
+{	
+	radio1=radio2=radio3="";
+	radio1=document.getElementById('NewReservation').checked;
+	radio2=document.getElementById('ChangeReservation').checked;
+	radio3=document.getElementById('CancelReservation').checked;	
+	//reload();
+	if(radio1==true && radio2==false && radio3==false)
+	{	
+		document.getElementById("ChangeDateRow").style.display="none";
+		document.getElementById("ChangeTimeRow").style.display="none";
+		document.getElementById("ChangeSeatsRow").style.display="none";
+		document.getElementById("ChangeLocationRow").style.display="none";
+		document.getElementById("TypeofCustomerRow").style.display="table-row";
+		document.getElementById("CelebrationRow").style.display="table-row";
+		document.getElementById("CustomerRequestRow").style.display="table-row";
+		document.getElementById("AllergiesRow").style.display="table-row";
+	} 
+	else if(radio1==false && radio2==true && radio3==false)
+	{  
+	    document.getElementById("ChangeDateRow").style.display="table-row";
+		document.getElementById("ChangeTimeRow").style.display="table-row";
+		document.getElementById("ChangeSeatsRow").style.display="table-row";
+		document.getElementById("ChangeLocationRow").style.display="table-row";
+		document.getElementById("TypeofCustomerRow").style.display="table-row";
+		document.getElementById("CelebrationRow").style.display="table-row";
+		document.getElementById("CustomerRequestRow").style.display="table-row";
+		document.getElementById("AllergiesRow").style.display="table-row";
+	} 
+	else
+	{   
+		document.getElementById("ChangeDateRow").style.display="none";
+		document.getElementById("ChangeTimeRow").style.display="none";
+		document.getElementById("ChangeSeatsRow").style.display="none";
+		document.getElementById("ChangeLocationRow").style.display="none";
+		document.getElementById("TypeofCustomerRow").style.display="none";
+		document.getElementById("CelebrationRow").style.display="none";
+		document.getElementById("CustomerRequestRow").style.display="none";
+		document.getElementById("AllergiesRow").style.display="none";
+	}
+	myFunction2();
+}
+
+function myFunction2()
+{	
+	var myoutput='';
+
+	if (document.getElementById("NewReservation").checked)
+		{
+			if (document.getElementById('KobeMemberYes').checked)
+			{ 
+			myoutput += "Kobe Reward Member\n";
+			}
+			else if (document.getElementById('KobeMemberNo').checked)
+			{ 
+			myoutput += "Not Kobe Reward Member\n";
+			}
+			else
+			{ 
+			myoutput += "";
+			}
+			myoutput += document.getElementById("TypeOfCelebration").value + "\n";
+			
+			if(document.getElementById("QuietRoom").checked)
+			{ 
+				myoutput += document.getElementById("QuietRoom").value + "\n";
+			}
+			if(document.getElementById("HappyHour").checked)
+			{ 
+				myoutput += document.getElementById("HappyHour").value + "\n";
+			}
+			if(document.getElementById("DinnerFor2").checked)
+			{ 
+				myoutput += document.getElementById("DinnerFor2").value + "\n";
+			}
+			if(document.getElementById("EarlyBird").checked)
+			{ 
+				myoutput += document.getElementById("EarlyBird").value + "\n";
+			}
+			if(document.getElementById("LunchMenu").checked)
+			{ 
+				myoutput += document.getElementById("LunchMenu").value + "\n";
+			}
+			if(document.getElementById("BirthdayDiscountEmail").checked)
+			{ 
+				myoutput += document.getElementById("BirthdayDiscountEmail").value + "\n";
+			}
+			if(document.getElementById("OneTable").checked)
+			{ 
+				myoutput += document.getElementById("OneTable").value + "\n";
+			}
+			myoutput += document.getElementById("Allergies").value + "\n";
+		}
+			
+	//Change Reservation
+	if (document.getElementById("ChangeReservation").checked)
+	{	
+		if (document.getElementById('FromDate').value) 
+		{
+			mydate = new Date(document.getElementById('FromDate').value);
+			mydate.setMinutes(mydate.getMinutes() + mydate.getTimezoneOffset());
+			myoutput += "Date: From- " + mydate.toLocaleDateString("en-US");
+			
+			/* var dd= mydate.getDate(); 
+			var mm= mydate.getMonth()+1;
+			var yy= mydate.getFullYear();
+			var newdate= mm+"-"+dd+"-"+yy;
+			myoutput += "Date: From- " +newdate;  */
+			
+		}
+		if (document.getElementById('ToDate').value)
+		{ 
+			mydate = new Date(document.getElementById('FromDate').value);
+			mydate.setMinutes(mydate.getMinutes() + mydate.getTimezoneOffset());
+			myoutput += " To- " + mydate.toLocaleDateString("en-US") + "\n";
+			
+			/*var dd= mydate.getDate(); 
+			var mm= mydate.getMonth()+1;
+			var yy= mydate.getFullYear();
+			var newdate= mm+"-"+dd+"-"+yy;
+			myoutput += " To- " +newdate+ "\n"; */
+
+		}
+		if (document.getElementById('FromTime').value)
+		{ 
+			myoutput += "Time: From- " + document.getElementById("FromTime").value ;
+		}
+		if (document.getElementById('ToTime').value)
+		{ 
+			myoutput += " To- " + document.getElementById("ToTime").value + "\n";
+		}
+		if (document.getElementById('FromSeats').value)
+		{
+			myoutput += "No. of Seats: From- " + document.getElementById("FromSeats").value ;
+		}
+		if (document.getElementById('ToSeats').value == "20+") 
+		{
+			alert ("More than 20 people - are you sure ?");
+		}
+		myoutput += " To: " + document.getElementById('ToSeats').value + "\n";
+		
+		if (document.getElementById('FromPlace').value)
+		{ 
+			myoutput += "Location: From- " + document.getElementById("FromPlace").value ;
+		}
+		if (document.getElementById('ToPlace').value)
+		{ 
+			myoutput += " To- " + document.getElementById("ToPlace").value + "\n";
+		}
+		if (document.getElementById('KobeMemberYes').checked)
+		{ 
+			myoutput += "Kobe Reward Member\n";
+		}
+		else if (document.getElementById('KobeMemberNo').checked)
+		{ 
+			myoutput += "Not Kobe Reward Member\n";
+		}
+		else
+		{ 
+			myoutput += "";
+		}
+			
+		myoutput += document.getElementById("TypeOfCelebration").value + "\n";
+			
+		if(document.getElementById("QuietRoom").checked)
+		{ 
+			myoutput += document.getElementById("QuietRoom").value + "\n";
+		}
+		if(document.getElementById("HappyHour").checked)
+		{ 
+			myoutput += document.getElementById("HappyHour").value + "\n";
+		}
+		if(document.getElementById("DinnerFor2").checked)
+		{ 
+			myoutput += document.getElementById("DinnerFor2").value + "\n";
+		}
+		if(document.getElementById("EarlyBird").checked)
+		{ 
+			myoutput += document.getElementById("EarlyBird").value + "\n";
+		}
+		if(document.getElementById("LunchMenu").checked)
+		{ 
+			myoutput += document.getElementById("LunchMenu").value + "\n";
+		}
+		if(document.getElementById("BirthdayDiscountEmail").checked)
+		{ 
+			myoutput += document.getElementById("BirthdayDiscountEmail").value + "\n";
+		}
+		if(document.getElementById("OneTable").checked)
+		{ 
+			myoutput += document.getElementById("OneTable").value + "\n";
+		}
+		myoutput += document.getElementById("Allergies").value + "\n";
+	}
+				
+	//Canel Reservation
+	if (document.getElementById('CancelReservation').checked) 
+	{
+			myoutput += "Customer called to cancel the reservation";
+			document.getElementById("Output").value = myoutput;
+			return;
+	}
+	
+	document.getElementById("Output").value = myoutput;
+
+} // end of myFunction2
+</script>
+

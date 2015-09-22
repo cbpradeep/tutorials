@@ -1,0 +1,321 @@
+<html>
+<body bgcolor="#E5ECFF">
+<!-- FRONTEND OF THE PAGE -->
+<h3 align="right"> Kobe - Email to Location &thinsp; &ensp; &emsp; &thinsp; &ensp; &emsp; &thinsp; &ensp; &emsp; &thinsp; &ensp; &emsp;
+<input type="button" style="color:black;font-weight: bold" value="Refresh" onclick="location.reload(true);" /> </h3>
+<div id="mytable" align="center">
+<table bgcolor="#E5E6E9" align="left" border=1 cellspacing="1" cellpadding="5" style="border-collapse:collapse;font-family:verdana;font-size:12px;border:2px solid;" >
+	<tr>
+		<th style="width:36%;" >Purpose of email</th>
+		<td>
+			<input type="radio" name="ETL" id="PrivateTable" onclick="myFunction()" checked="checked">Private Table &nbsp;
+			<input type="radio" name="ETL" id="SpecificChef" onclick="myFunction()">Request for specific chef </br>
+		</td>
+	</tr>
+	<tr id="NoPeopleLocationRow" style="display:show;">
+		<th>No. of People and Location: </th>
+		<td>No. of People:
+			<select id="NoPeople">
+				<option selected="selected" value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="20+">20+</option>
+			</select> &nbsp;			
+			Location: <select id="Location">
+			<option value="Select">Select</option>
+			<option value="Alafaya">Alafaya</option>
+			<option value="Altamonte Springs">Altamonte Springs</option>
+			<option value="Brandon">Brandon</option>
+			<option value="Clearwater">Clearwater</option>
+			<option value="I-Drive / Convention">I-Drive / Convention</option>
+			<option value="Kirkman/Universal">Kirkman/Universal</option>
+			<option value="Kissimmee">Kissimmee</option>
+			<option value="Lake Buena Vista">Lake Buena Vista</option>
+			<option value="Longwood">Longwood</option>
+			<option value="New Tampa">New Tampa</option>
+			<option value="TAMPA">Tampa</option> </select>
+		</td>
+	</tr>
+	<tr id="BookingDateTimeRow" style="display:show;">
+		<th>Booking Date and Time: </th>
+		<td>
+			Date :<input type="date" id="Date"> 
+			Time : <input type="time" id="Time">
+		</td>
+	</tr>
+	<tr id="FullNameRow" style="display:show;">
+		<th>Full Name: </th>
+		<td><input type="text" id="FullName" size="48"></td>
+	</tr>
+	<tr id="PhoneNumberRow" style="display:show;">
+		<th>Phone Number: </th>
+		<td><input type="text" id="PhoneNumber" size="20"></td>
+	</tr>
+	<tr id="EmailAddressRow" style="display:show;">
+		<th>Email Address: </th>
+		<td><input type="email" id="Email" size="48" value="N/A"></td>
+	</tr>
+	<tr id="TypeofCustomerRow" style="display:show;">
+		<th> Type of Customer </th>
+		<td>
+			<input type="radio" name="KobeMember" id="KobeMemberYes">Kobe Member &nbsp &nbsp &nbsp
+			<input type="radio" name="KobeMember" id="KobeMemberNo">Non Kobe Member
+		</td>
+	</tr>
+	<tr id="CelebrationRow" style="display:show;">
+		<th> Type of Celebration </th>
+		<td><select id="TypeOfCelebration">
+			<option value="No Celebration">No Celebration</option>
+			<option value="Birthday Celebration">Birthday</option>
+			<option value="Anniversary Celebration">Anniversary</option>
+			<option value="Graduation Celebration">Graduation</option>
+			</select>
+		</td>
+	</tr>
+	<tr id="TentativeReservationRow" style="display:show;">
+		<th>Tentative Reservation No.: </th>
+		<td><input type="text" id="TRNumber" size="20"></td>
+	</tr>
+	<tr id="CustomerMinChargeRow" style="display:show;">
+		<th>Informed Customer of USD 250 Minimum Charge: </th>
+		<td>
+			Yes : <input type="radio" name="MinCharge" id="MinChargeYes">&nbsp;
+			No : <input type="radio" name="MinCharge" id="MinChargeNo">
+		</td>
+	</tr>
+	<tr id="RequestedChefRow" style="display:none;">
+		<th>Request for specific Chef:</th>
+		<td><input type="text" id="Chef"></td>
+	</tr>
+	<tr id="SpecialInstructionsRow" style="display:show;">
+		<th>Special Instructions: </th>
+		<td><textarea  id="SpecialInstruction" rows="3" cols="55"></textarea></td>
+	</tr>
+</table> 
+
+</div>
+<table align="center"><tr><th><div id="outputarea">
+<textarea rows="15" cols="105" name="Output" id="Output" style="font-size:10px;border:2px solid;"></textarea></th>
+<td><input type="button" style="color:black;font-weight: bold" value="  Done  " onclick="myFunction2();" />
+<p align="right"><input type="button" style="color:black;font-weight: bold" value="  Copy  " onclick="ClipBoard();"/> </p> </td></tr></tr>
+</div> </table>
+
+<!-- FUNCTION FOR DISPLAYING THE INFORMATION SELECTED ON THE PAGE -->
+
+<script>
+
+function ClipBoard() 
+{
+//var copyDiv = document.createElement('div');
+//copyDiv.contentEditable = true;
+//document.body.appendChild(copyDiv);
+//copyDiv.innerHTML = document.getElementById("Output").value;
+//copyDiv.unselectable = "off";
+document.getElementById("Output").focus();
+document.execCommand('SelectAll');
+document.execCommand("Copy", false, null);
+//document.body.removeChild(copyDiv);
+document.execCommand('Unselect');
+//Copied = document.getElementById("Output").value.createTextRange();
+//Copied.execCommand("Copy");
+}
+
+Date.prototype.toDateInputValue = (function() {
+    var local = new Date(this);
+    return local.toJSON().slice(0,10);
+}); 
+
+var today = new Date().toDateInputValue();
+document.getElementById('Date').min=today;
+
+function myFunction()
+{	
+	radio1=radio2="";
+	radio1=document.getElementById('PrivateTable').checked;
+	radio2=document.getElementById('SpecificChef').checked;
+	if(radio1==true && radio2==false)
+	{	
+		document.getElementById("RequestedChefRow").style.display="none";
+		document.getElementById("CustomerMinChargeRow").style.display="table-row";
+	}
+	else
+	{   
+		document.getElementById("CustomerMinChargeRow").style.display="none";
+		document.getElementById("RequestedChefRow").style.display="table-row";
+	}
+}
+
+function myFunction2()
+{	
+	var myoutput='';
+
+	if (document.getElementById('Location').value == "Select") 
+	{
+		alert ("Location must be selected");
+		return;
+	}
+	else
+	{
+		myoutput += "Location: " + document.getElementById('Location').value + "\n";
+	}
+	
+	if (document.getElementById('Date').value == "") 
+	{
+		alert ("Date must be entered");
+		return;
+	}
+	else
+	{
+		mydate = new Date(document.getElementById('Date').value);
+		mydate.setMinutes(mydate.getMinutes() + mydate.getTimezoneOffset());
+		myoutput += "Date: " + mydate.toLocaleDateString("en-US") + "\n";
+		
+		/*
+		var dd= mydate.getDate(); 
+		var mm= mydate.getMonth()+1;
+		var yy= mydate.getFullYear();
+		var newdate= mm+"-"+dd+"-"+yy;
+		myoutput += "Date: " +newdate+ "\n"; 
+		myoutput += "Date: " + mydate.toLocaleDateString() + "\n"; */
+
+	}
+
+	if (document.getElementById('Time').value == "") 
+	{
+		alert ("Time must be entered");
+		return;
+	}
+	else
+	{
+		var time=document.getElementById('Time').value;
+		//alert(time);
+		myoutput += "Time: " + document.getElementById('Time').value + "\n";
+	}
+
+	if (document.getElementById('FullName').value == "") 
+	{
+		alert ("Name must be entered");
+		return;
+	}
+	else
+	{
+		myoutput += "Name: " + document.getElementById('FullName').value + "\n";
+	}
+
+	if (document.getElementById('PhoneNumber').value == "") 
+	{
+		alert ("Phone Number must be entered");
+		return;
+	}
+	else
+	{
+		myoutput += "Phone: " + document.getElementById('PhoneNumber').value + "\n";
+	}
+	
+	if (document.getElementById('Email').value == "") 
+	{
+		alert ("Email must be entered");
+		return;
+	}
+	else
+	{
+		myoutput += "Email: " + document.getElementById('Email').value + "\n";
+	}
+
+	if (document.getElementById('KobeMemberYes').checked)
+	{ 
+		myoutput += "Kobe Reward Member\n";
+	}
+	else if (document.getElementById('KobeMemberNo').checked)
+	{ 
+		myoutput += "Not Kobe Reward Member\n";
+	}
+	else
+	{ 
+		myoutput += "";
+	}
+
+	myoutput += document.getElementById("TypeOfCelebration").value + "\n";
+
+	if (document.getElementById('NoPeople').value == "0") 
+	{
+		alert ("Number of people must be selected !");
+		return;
+	}
+	if (document.getElementById('NoPeople').value == "20+") 
+	{
+		alert ("More than 20 people - are you sure ?");
+	}
+	myoutput += "Number of People: " + document.getElementById('NoPeople').value + "\n";
+	
+	if (document.getElementById('TRNumber').value == "") 
+	{
+		alert ("Tentative Resv Number must be entered");
+		return;
+	}
+	else
+	{
+		myoutput += "Tentative Reservation No: " + document.getElementById('TRNumber').value + "\nplease call and confirm the reservation\n";
+	}
+
+	if (document.getElementById('PrivateTable').checked)
+	{
+		if (document.getElementById('MinChargeYes').checked) 
+		{
+			myoutput += "\nCustomer requested for a private table\n";
+			myoutput += "Informed customer of the USD 250 minimum charge\n";
+		}
+		else
+		{
+			alert ("You must confirm about minimum charge with customer !");
+			return;
+		}
+	 }
+
+	if (document.getElementById('SpecificChef').checked)
+	{
+		if (document.getElementById('Chef').value == "") 
+		{
+			alert ("Chef name must be entered");
+			return;
+		}
+		else
+		{
+			myoutput += "\nCustomer requested for chef " + document.getElementById('Chef').value + "\n";
+			myoutput += "Please call the customer and confirm the Chef's schedule\n";
+		}
+	 }
+
+	if (document.getElementById('SpecialInstruction').value == "") 
+	{
+	}
+	else
+	{
+		myoutput += "Special Instructions: " + document.getElementById('SpecialInstruction').value + "\n";
+	}
+	//alert(today);
+    //alert(mydate);
+	document.getElementById("Output").value = myoutput + "\nTHANK YOU\n";
+
+} // end of myFunction2
+</script>
+</body>
+</html>
